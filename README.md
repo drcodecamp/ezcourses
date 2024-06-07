@@ -3,7 +3,13 @@ with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/
 
 ## Getting Started
 
-First, run the development server:
+First make sure to init Prisma so run:
+
+```
+prisma generate
+```
+
+Next, run the development server:
 
 ```bash
 npm run dev
