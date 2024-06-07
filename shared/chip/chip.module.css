@@ -1,0 +1,19 @@
+.chip {
+    border-radius: var(--border-radius);
+    display: flex;
+    min-width: 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    background-color: var(--background-color-100);
+    cursor: pointer;
+}
+
+.selected {
+    background-color: var(--background-color-highlight);
+}
+
+.chip:hover {
+    color: white;
+    background-color: var(--background-color-highlight);
+}

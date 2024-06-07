@@ -1,0 +1,12 @@
+.cart {
+    border-radius: var(--border-radius);
+    margin-top: 2em;
+    background-color: var(--background-color-highlight);
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--background-color-800);
+}

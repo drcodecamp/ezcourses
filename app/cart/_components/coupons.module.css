@@ -1,0 +1,24 @@
+.coupon {
+    display: flex;
+    padding: .45em;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 1em;
+    height: 25px;
+    border: 1px dotted var(--border-color);
+}
+
+.coupon button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    border-radius: var(--border-radius);
+}
+
+.coupon button:hover {
+    background-color: var(--background-color-highlight);
+    cursor: pointer;
+}

@@ -1,0 +1,22 @@
+.success {
+    display: flex;
+    gap: 0.5em;
+    justify-content: center;
+    align-items: center;
+    color: #8BC34A;
+    background: #4caf502b;
+    height: 30px;
+    border-radius: var(--border-radius);
+}
+
+.error {
+    display: flex;
+    gap: 0.5em;
+    justify-content: center;
+    align-items: center;
+    color: #f65151;
+    padding: 0.25em;
+    height: 30px;
+    border-radius: var(--border-radius);
+    background: #ff000b0f;
+}

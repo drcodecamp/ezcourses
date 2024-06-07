@@ -1,0 +1,123 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*:where(
+    :not(input, html, iframe, canvas, img, svg, video):not(svg *, symbol *)
+  ) {
+    all: unset;
+    display: revert;
+}
+
+::-webkit-scrollbar {
+    height: 5px;
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: var(--border-radius);
+    width: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+::-webkit-scrollbar-track {
+    width: 3px;
+}
+
+a {
+    cursor: pointer;
+}
+
+:root {
+    --logo-color: #cd3720;
+    --primary: rgb(229, 9, 20);
+    --primary-highlight: #ea4f30;
+    --text-color: #dedede;
+    --text-color-100: #dedede;
+    --text-color-200: #c2c2c2;
+    --text-color-300: #b8b8b8;
+    --text-color-400: #999999;
+    --text-color-500: #848484;
+    --text-color-600: #6e6e6e;
+    --text-color-700: #515151;
+    --text-color-800: #393939;
+    --text-color-900: #2d2d2d;
+    --danger: #e62749;
+    --bg-success: #14c780;
+    --background-color-transparent: rgba(7, 7, 7, 0.5);
+    --background-color: #070707;
+    --background-color-100: #151519;
+    /*    --background-color-100: #0f0f11;*/
+    --background-color-200: #1c1b21;
+    --background-color-300: #211f26;
+    --background-color-400: #25242b;
+    --background-color-500: #242931;
+    --background-color-600: #2d2b36;
+    --background-color-700: #2d2a38;
+    --background-color-800: #312f3d;
+    --background-color-900: #363440;
+    --background-color-highlight: #1b1f25;
+    --border-color: #1f1e23;
+    --border-radius: 5px;
+    --text-color-solid-button: #eeeeee;
+    --font-title: 2.4em;
+    --font-subtitle: 1.2em;
+    --font-regular: 1em;
+    --header-height: 65px;
+    --svg-fill-color: #A8B3CFFF;
+    --svg-fill-color-hover: #c6cee7;
+}
+
+[data-theme="light"] {
+
+}
+
+html {
+    color: var(--text-color);
+    background-color: var(--background-color);
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+span {
+    padding-inline: 2px;
+}
+
+footer {
+    background-color: var(--background-color-400);
+}
+
+footer section {
+    display: flex;
+}
+
+footer svg {
+    width: 24px;
+    height: 24px;
+}
+
+hr {
+    border-bottom: 1px solid var(--background-color-700)
+}
+
+
+
+

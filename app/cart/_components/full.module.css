@@ -1,0 +1,30 @@
+.item {
+    margin-top: .55em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item img {
+    width: 125px;
+}
+
+.info {
+    display: flex;
+    gap: 1em;
+}
+
+.price {
+    justify-self: end;
+    align-self: center;
+}
+
+.remove {
+    color: var(--primary-highlight);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cart-item-remove:hover {
+    filter: brightness(1.2);
+}

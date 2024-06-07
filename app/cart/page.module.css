@@ -1,0 +1,33 @@
+.cart {
+    margin-top: 2em;
+    max-width: 1024px;
+    display: flex;
+    gap: 2em;
+}
+
+.courses {
+    flex: 2;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    flex: 1;
+}
+
+.coupon {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+@media (width < 1024px) {
+    .cart {
+        flex-direction: column;
+    }
+
+    .info {
+        text-align: center;
+    }
+}

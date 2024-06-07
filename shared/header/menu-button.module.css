@@ -1,0 +1,25 @@
+.burger {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 0.2em;
+    padding-top: 11px;
+}
+
+.burger:hover div {
+    background-color: var(--text-color)
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    border-radius: 5px;
+    background-color: var(--border-color)
+}
+
+@media (width < 1000px) {
+    .burger {
+        display: none;
+    }
+}

@@ -1,0 +1,49 @@
+.h1 {
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.h2 {
+    color: var(--text-color-200);
+    font-weight: bold;
+}
+
+.h3 {
+    color: var(--text-color-300);
+}
+
+.h4 {
+    color: var(--text-color-400);
+}
+
+.p {
+    color: var(--text-color);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.xs {
+    font-size: 12px;
+}
+
+.sm {
+    font-size: 14px;
+}
+
+.md {
+    font-size: 1em;
+}
+
+.lg {
+    font-size: 1.25em;
+}
+
+.xl {
+    font-size: 1.45em;
+}
+
+.xxl {
+    font-size: 1.756em;
+}

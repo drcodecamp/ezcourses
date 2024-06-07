@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  ADMIN
+  USER
+}
+
+/// User represents a registered user within the application.
+/// Each user can have multiple roles represented by the UserRole enum.
+/// A user can also have multiple connected accounts.
+model User {
+  id            String    @id @default(cuid()) /// The unique identifier for the user.
+  name          String? /// The name of the user, can be null.
+  email         String    @unique /// The email of the user, must be unique.
+  emailVerified DateTime? /// The timestamp when the email was verified, can be null.
+  image         String? /// The image URL of the user, can be null.
+  password      String? /// The hashed password of the user, can be null.
+  role          UserRole  @default(USER) /// The role of the user, default is USER.
+  accounts      Account[] /// The social accounts connected to the user.
+  createdAt     DateTime  @default(now()) /// The timestamp when the user was created.
+  updatedAt     DateTime  @updatedAt /// The timestamp when the user was last updated.
+}
+
+model Account {
+  userId            String /// The unique identifier for the associated user.
+  type              String /// The type of the social account (e.g., Google, Facebook).
+  provider          String /// The name of the provider of the social account.
+  providerAccountId String /// The provider's unique identifier for the user.
+  refresh_token     String? /// The refresh token from the provider, can be null.
+  access_token      String? /// The access token from the provider, can be null.
+  expires_at        Int? /// The timestamp (in seconds) when the access token expires, can be null.
+  token_type        String? /// The type of the token, can be null.
+  scope             String? /// The scope of the access granted by the provider, can be null.
+  id_token          String? /// The ID token from the provider used for Identity Verification, can be null.
+  session_state     String? /// The session state, can be null.
+
+  createdAt DateTime @default(now()) /// The timestamp when the account was created.
+  updatedAt DateTime @updatedAt /// The timestamp when the account was last updated.
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade) /// The associated user.
+
+  @@id([provider, providerAccountId]) /// The compound unique identifier for the account.
+}
