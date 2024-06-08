@@ -66,17 +66,12 @@ const LoginForm: FC<PropsWithChildren> = () => {
       })
     }
     setValidate({
-      password: validate.password,
-      email: null,
+      ...validate,
+      email: emailPattern.test(e.target.value),
     })
     setInfo({
       ...info,
       email: e.target.value,
-    })
-    const isValidEmail = emailPattern.test(info.email)
-    setValidate({
-      ...validate,
-      email: isValidEmail,
     })
   }
   const handleLogin = () => {
