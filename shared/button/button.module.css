@@ -1,3 +1,17 @@
+.pending {
+    cursor: not-allowed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: var(--border-radius);
+    padding: 0 1em;
+    color: var(--text-color-solid-button);
+    text-align: center;
+    background-color: var(--background-color-200);
+    min-height: 24px;
+}
+
 .solid {
     position: relative;
     border-radius: var(--border-radius);
