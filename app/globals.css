@@ -50,7 +50,7 @@ a {
     --text-color-900: #2d2d2d;
     --danger: #e62749;
     --bg-success: #14c780;
-    --background-color-transparent: rgba(7, 7, 7, 0.5);
+    --background-color-transparent: rgba(7, 7, 7, 0.7);
     --background-color: #070707;
     --background-color-100: #151519;
     /*    --background-color-100: #0f0f11;*/
@@ -63,6 +63,7 @@ a {
     --background-color-800: #312f3d;
     --background-color-900: #363440;
     --background-color-highlight: #1b1f25;
+    --input-auto-complete: rgba(104, 116, 149, 0.36);
     --border-color: #1f1e23;
     --border-radius: 5px;
     --text-color-solid-button: #eeeeee;

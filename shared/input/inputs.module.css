@@ -7,7 +7,8 @@
     -webkit-text-fill-color: #ffffff;
     transition: background-color 5000s ease-in-out 0s;
     box-shadow: inset 0 0 20px 20px #23232329;
-    -webkit-box-shadow: 0 0 0 30px var(--background-color-highlight) inset;
+    -webkit-box-shadow: 0 0 0 30px var(--input-auto-complete) inset;
+    border: 1px solid var(--text-color-700);
 }
 
 .input:-webkit-autofill {
@@ -19,7 +20,7 @@
     border: unset;
     color: var(--text-color);
     height: 60px;
-    font-size: 1.1em;
+    font-size: 1em;
     border-radius: var(--border-radius);
 }
 
@@ -70,12 +71,21 @@
 .container button {
     position: absolute;
     right: 1em;
-    top: calc(65px / 2 - 9px);
+    top: calc(60px / 2 - 18px);
     cursor: pointer;
 }
 
-.icon:focus {
-    outline: 1px solid var(--text-color-200);
+.icon:hover {
+    background-color: var(--background-color-500);
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    height: 35px;
+    width: 35px;
 }
 .container {
     display: flex;

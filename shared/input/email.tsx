@@ -33,6 +33,7 @@ export const EmailInput: React.FC<Props> = ({
     <div className={classes.container}>
       {endContent && <button>{endContent}</button>}
       <input
+        autoComplete="email"
         value={value}
         className={`${classes.input} ${
           fullWidth ? classes.full : props.width
