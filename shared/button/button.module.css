@@ -23,6 +23,9 @@
     min-height: 24px;
 }
 
+.solid:focus {
+    outline: 2px solid var(--text-color-200);
+}
 .solid:disabled {
     background-color: var(--background-color-highlight);
 }

@@ -8,7 +8,13 @@ import { Button } from '@/shared/button/button'
 import Link from 'next/link'
 import { appRoutes } from '@/constants/routes'
 import { login } from '@/actions/login'
-import React, { FC, PropsWithChildren, useState, useTransition } from 'react'
+import React, {
+  FC,
+  PropsWithChildren,
+  useRef,
+  useState,
+  useTransition,
+} from 'react'
 import { emailPattern } from '@/util/patterns/patterns'
 import { EmailInput } from '@/shared/input/email'
 import { PasswordInput } from '@/shared/input/password'
@@ -36,6 +42,7 @@ const LoginForm: FC<PropsWithChildren> = () => {
   const [feedback, setFeedback] = useState(initialFeedback)
   const [validate, setValidate] = useState<IsValidType>(initialValidate)
   const [info, setInfo] = useState(initialInformation)
+  const passwordEl = useRef(null)
 
   const handlePasswordInputChange = (
     e: React.ChangeEvent<HTMLInputElement>
@@ -107,6 +114,7 @@ const LoginForm: FC<PropsWithChildren> = () => {
       })
     })
   }
+
   return (
     <>
       <button className={classes.method}>

@@ -24,7 +24,7 @@
 }
 
 .container input:focus {
-    outline: 2px solid var(--background-color-200);
+    outline: 2px solid var(--text-color-200);
 }
 
 .container label {
@@ -74,7 +74,9 @@
     cursor: pointer;
 }
 
-
+.icon:focus {
+    outline: 1px solid var(--text-color-200);
+}
 .container {
     display: flex;
     flex-direction: column;
