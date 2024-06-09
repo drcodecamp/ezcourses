@@ -47,6 +47,7 @@ export const PasswordInput = ({
   return (
     <div className={classes.container}>
       <input
+        autoComplete="current-password"
         value={value}
         type={isDisplayed ? 'text' : 'password'}
         className={`${classes.input} ${fullWidth ? classes.full : props.width} `}
