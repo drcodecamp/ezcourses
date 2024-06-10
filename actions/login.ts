@@ -1,13 +1,13 @@
 'use server'
 
-import { LoginSchema } from '@/schemas'
+import { loginSchema } from '@/schemas'
 import { signIn } from '@/auth'
 import { DEFAULT_LOGIN_REDIRECT } from '@/routes'
 import { AuthError } from 'next-auth'
 import { z } from 'zod'
 
-export const login = async (userInfo: z.infer<typeof LoginSchema>) => {
-  const validatedFields = LoginSchema.safeParse(userInfo)
+export const login = async (userInfo: z.infer<typeof loginSchema>) => {
+  const validatedFields = loginSchema.safeParse(userInfo)
   if (!validatedFields.success) {
     return {
       type: 'error',
@@ -29,7 +29,7 @@ export const login = async (userInfo: z.infer<typeof LoginSchema>) => {
   } catch (error) {
     if (error instanceof AuthError) {
       switch (error.type) {
-        case 'CredentialsSignin':
+        case 'CallbackRouteError':
           return {
             type: 'error',
             message: 'Invalid credentials!',

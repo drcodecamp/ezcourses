@@ -8,16 +8,13 @@ import { Button } from '@/shared/button/button'
 import Link from 'next/link'
 import { appRoutes } from '@/constants/routes'
 import { login } from '@/actions/login'
-import React, {
-  FC,
-  PropsWithChildren,
-  useRef,
-  useState,
-  useTransition,
-} from 'react'
+import React, { FC, PropsWithChildren, useState, useTransition } from 'react'
 import { emailPattern } from '@/util/patterns/patterns'
 import { EmailInput } from '@/shared/input/email'
 import { PasswordInput } from '@/shared/input/password'
+import { signIn } from 'next-auth/react'
+import { DEFAULT_LOGIN_REDIRECT } from '@/routes'
+import { useSearchParams } from 'next/navigation'
 
 // todo export inputs into hook that return component and logic
 
@@ -38,11 +35,18 @@ export type IsValidType = {
 }
 
 const LoginForm: FC<PropsWithChildren> = () => {
+  const searchParams = useSearchParams()
+  const urlError =
+    searchParams.get('error') === 'OAuthAccountNotLinked'
+      ? 'Email is used with another provider'
+      : ''
   const [isPending, startTransition] = useTransition()
-  const [feedback, setFeedback] = useState(initialFeedback)
+  const [feedback, setFeedback] = useState({
+    type: 'error',
+    message: urlError,
+  })
   const [validate, setValidate] = useState<IsValidType>(initialValidate)
   const [info, setInfo] = useState(initialInformation)
-  const passwordEl = useRef(null)
 
   const handlePasswordInputChange = (
     e: React.ChangeEvent<HTMLInputElement>
@@ -117,13 +121,27 @@ const LoginForm: FC<PropsWithChildren> = () => {
 
   return (
     <>
-      <button className={classes.method}>
+      <button
+        className={classes.method}
+        onClick={() => {
+          signIn('google', {
+            callbackUrl: DEFAULT_LOGIN_REDIRECT,
+          })
+        }}
+      >
         <div className={classes.icon}>
           <FcGoogle />
         </div>
         Continue with Google
       </button>
-      <button className={classes.method}>
+      <button
+        className={classes.method}
+        onClick={() => {
+          signIn('github', {
+            callbackUrl: DEFAULT_LOGIN_REDIRECT,
+          })
+        }}
+      >
         <div className={classes.icon}>
           <FaFacebook color="#4172e7" />
         </div>

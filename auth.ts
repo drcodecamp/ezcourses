@@ -1,41 +1,48 @@
 import NextAuth from 'next-auth'
-import {PrismaAdapter} from '@auth/prisma-adapter'
-import {db} from '@/lib/db'
+import { PrismaAdapter } from '@auth/prisma-adapter'
+import { db } from '@/lib/db'
 import authConfig from '@/auth.config'
-import {getUserByID} from '@/data/user'
+import { getUserByID } from '@/data/user'
+import { UserRole } from '@prisma/client'
 
 export const {
-    handlers: {GET, POST},
-    auth,
-    signIn,
-    signOut,
+  handlers: { GET, POST },
+  auth,
+  signIn,
+  signOut,
 } = NextAuth({
-    callbacks: {
-        /*    async signIn({ user }) {
-          const existingUser = await getUserByID(user.id)
-          if (!existingUser || !existingUser.emailVerified) {
-            return false
-          }
-          return true
-        },*/
-        async session({token, session}) {
-            if (token.sub && session.user) {
-                session.user.id = token.sub
-            }
-            if (token['role'] && session.user) {
-                session.user.role = token.role as 'ADMIN' | 'USER'
-            }
-            return session
-        },
-        async jwt({token}) {
-            if (!token.sub) return token
-            const existingUser = await getUserByID(token.sub)
-            if (!existingUser) return token
-            token.role = existingUser['role']
-            return token
-        },
+  pages: {
+    signIn: '/auth/login',
+    error: '/auth/error',
+  },
+  events: {
+    async linkAccount({ user }) {
+      console.log('linking', user)
+      await db.user.update({
+        where: { id: user.id },
+        data: { emailVerified: new Date() },
+      })
     },
-    adapter: PrismaAdapter(db),
-    session: {strategy: 'jwt'},
-    ...authConfig,
+  },
+  callbacks: {
+    async session({ token, session }) {
+      if (token.sub && session.user) {
+        session.user.id = token.sub
+      }
+      if (token['role'] && session.user) {
+        session.user.role = token.role as UserRole
+      }
+      return session
+    },
+    async jwt({ token }) {
+      if (!token.sub) return token
+      const existingUser = await getUserByID(token.sub)
+      if (!existingUser) return token
+      token.role = existingUser['role']
+      return token
+    },
+  },
+  adapter: PrismaAdapter(db),
+  session: { strategy: 'jwt' },
+  ...authConfig,
 })

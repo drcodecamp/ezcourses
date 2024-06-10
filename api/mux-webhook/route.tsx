@@ -1,4 +1,4 @@
-import {NextRequest} from 'next/server'
+import { NextRequest } from 'next/server'
 
 /**
  * Sends a POST request and handles the response accordingly.
