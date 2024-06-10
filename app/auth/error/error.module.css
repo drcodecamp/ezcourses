@@ -1,0 +1,8 @@
+.error {
+    margin: 0 auto;
+    width: 320px;
+    height: 400px;
+    position: relative;
+    z-index: 1;
+    background-color: green;
+}

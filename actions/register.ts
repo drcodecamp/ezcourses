@@ -1,13 +1,13 @@
 'use server'
 
-import { RegisterSchema } from '@/schemas'
+import { registerSchema } from '@/schemas'
 import bcrypt from 'bcryptjs'
 import { db } from '@/lib/db'
 import { getUserByEmail } from '@/data/user'
 import { z } from 'zod'
 
-export const register = async (userInfo: z.infer<typeof RegisterSchema>) => {
-  const validate = RegisterSchema.safeParse(userInfo)
+export const register = async (userInfo: z.infer<typeof registerSchema>) => {
+  const validate = registerSchema.safeParse(userInfo)
   if (!validate.success) {
     return {
       type: 'error',
