@@ -1,7 +1,7 @@
 import MuxPlayer from '@mux/mux-player-react'
 
 interface ParamsType {
-    slug: string
+  slug: string
 }
 
 async function WatchPage({params}: { params: ParamsType }) {
