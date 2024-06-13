@@ -2,7 +2,7 @@
  * Array of public Routes!
  * @type {string[]}
  */
-export const publicRoutes: string[] = ['/']
+export const publicRoutes: string[] = ['/', '/course', '/watch']
 /**
  * Array of routes related to auth!
  * @type {string[]}
@@ -22,4 +22,5 @@ export const apiAuthPrefix: string = '/api/auth'
  * default redirect path after logged in
  * @type {string}
  */
+
 export const DEFAULT_LOGIN_REDIRECT: string = '/settings'
