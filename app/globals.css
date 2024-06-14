@@ -71,12 +71,11 @@ a {
     --font-subtitle: 1.2em;
     --font-regular: 1em;
     --header-height: 65px;
-    --svg-fill-color: #A8B3CFFF;
+    --svg-fill-color: #a8b3cfff;
     --svg-fill-color-hover: #c6cee7;
 }
 
-[data-theme="light"] {
-
+[data-theme='light'] {
 }
 
 html {
@@ -85,7 +84,8 @@ html {
     font-size: 16px;
     font-weight: normal;
     margin: 0;
-    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 body {
@@ -116,9 +116,5 @@ footer svg {
 }
 
 hr {
-    border-bottom: 1px solid var(--background-color-700)
+    border-bottom: 1px solid var(--background-color-700);
 }
-
-
-
-
