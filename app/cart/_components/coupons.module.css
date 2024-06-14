@@ -1,6 +1,6 @@
 .coupon {
     display: flex;
-    padding: .45em;
+    padding: 0.45em;
     justify-content: space-between;
     align-items: center;
     margin-block: 1em;
