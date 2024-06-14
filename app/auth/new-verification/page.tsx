@@ -1,16 +1,16 @@
-import ErrorForm from '@/app/auth/_components/error-form'
 import classes from '@/app/auth/layout.module.css'
 import Text from '@/shared/typography/text'
+import VerificationForm from '@/app/auth/_components/verification-form'
 
-const AuthErrorPage = () => {
+const Page = () => {
   return (
     <div className={`${classes.container} ${classes.center}`}>
       <Text variant="h1" size="xxl">
-        Oops...
+        New Verification
       </Text>
-      <ErrorForm />
+      <VerificationForm />
     </div>
   )
 }
 
-export default AuthErrorPage
+export default Page
