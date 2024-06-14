@@ -17,11 +17,19 @@
     font-size: 1.1em;
 }
 
-.aside nav {
+.aside nav details {
     width: 220px;
     display: flex;
     flex-direction: column;
     gap: 1em;
+
+    summary{
+        cursor: pointer;
+    }
+    a {
+        display: flex;
+        gap: 5px;
+    }
 }
 
 .aside nav:not(:first-child) {
