@@ -1,5 +1,3 @@
-'use client'
-
 import Text from '@/shared/typography/text'
 import classes from '../layout.module.css'
 import React, { FC, PropsWithChildren } from 'react'

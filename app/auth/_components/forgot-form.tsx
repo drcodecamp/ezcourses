@@ -11,10 +11,12 @@ import { EmailInput } from '@/shared/input/email'
 const ForgotForm: FC<PropsWithChildren> = () => {
   const [isValid, setValidate] = useState<null | boolean>(null)
   const [email, setEmail] = useState('')
+
   const handleEmailInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValidate(emailPattern.test(e.target.value))
     setEmail(e.target.value)
   }
+
   const isPending = false
 
   return (
@@ -32,8 +34,8 @@ const ForgotForm: FC<PropsWithChildren> = () => {
       <Button
         height={50}
         variant="solid"
-        disabled={true}
-        isPending={true}
+        disabled={!isValid}
+        isPending={false}
         ripple
       >
         Restore

@@ -190,7 +190,7 @@ const LoginForm: FC<PropsWithChildren> = () => {
         <hr />
         <p className={classes.center}>
           <span>
-            <Link href={appRoutes.forgot}>Forgot password?</Link>
+            <Link href={appRoutes.reset}>Forgot password?</Link>
           </span>
         </p>
         <p className={classes.center}>
