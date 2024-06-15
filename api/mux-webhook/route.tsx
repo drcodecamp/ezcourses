@@ -6,11 +6,11 @@ import { NextRequest } from 'next/server'
  */
 export async function POST(request: NextRequest) {
     const body = await request.json()
-    const {type, data} = body
+    const { type, data } = body
     if (type === 'video.asset.ready') {
-        console.log('Gotta save this', data)
+      // todo save this
     } else {
-        /* handle other event types */
+      /* handle other event types */
     }
-    return Response.json({message: 'ok'})
+    return Response.json({ message: 'ok' })
 }

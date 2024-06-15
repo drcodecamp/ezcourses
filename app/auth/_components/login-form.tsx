@@ -16,8 +16,6 @@ import { signIn } from 'next-auth/react'
 import { DEFAULT_LOGIN_REDIRECT } from '@/routes'
 import { useSearchParams } from 'next/navigation'
 
-// todo export inputs into hook that return component and logic
-
 export const initialFeedback = {
   type: '',
   message: '',
@@ -32,6 +30,10 @@ const initialInformation = {
 }
 export type IsValidType = {
   [k: string]: boolean | null
+}
+type Inputs = {
+  example: string
+  exampleRequired: string
 }
 
 const LoginForm: FC<PropsWithChildren> = () => {
@@ -126,6 +128,8 @@ const LoginForm: FC<PropsWithChildren> = () => {
         onClick={() => {
           signIn('google', {
             callbackUrl: DEFAULT_LOGIN_REDIRECT,
+          }).then((r) => {
+            //
           })
         }}
       >
@@ -139,6 +143,8 @@ const LoginForm: FC<PropsWithChildren> = () => {
         onClick={() => {
           signIn('github', {
             callbackUrl: DEFAULT_LOGIN_REDIRECT,
+          }).then((r) => {
+            //
           })
         }}
       >

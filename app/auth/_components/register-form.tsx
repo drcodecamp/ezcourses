@@ -70,7 +70,6 @@ const RegisterForm: FC<PropsWithChildren> = () => {
     })
   }
   const handleRegister = (e: React.MouseEvent<HTMLElement>) => {
-    console.log('?!')
     if (!info.name) {
       return setFeedback({
         type: 'error',
@@ -121,7 +120,6 @@ const RegisterForm: FC<PropsWithChildren> = () => {
     }
     startTransition(() => {
       register(info).then((data) => {
-        console.log(data)
         setFeedback(data)
       })
     })

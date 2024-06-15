@@ -1,17 +1,17 @@
 import Text from '@/shared/typography/text'
 import classes from '../layout.module.css'
 import React, { FC, PropsWithChildren } from 'react'
-import ResetForm from '@/app/auth/_components/reset-form'
+import NewPasswordForm from '@/app/auth/_components/new-password-form'
 
-const ForgotPage: FC<PropsWithChildren> = () => {
+const NewPasswordPage: FC<PropsWithChildren> = () => {
   return (
     <div className={classes.container}>
       <Text variant="h1" size="xxl">
-        Reset password
+        Create new password
       </Text>
-      <ResetForm />
+      <NewPasswordForm />
     </div>
   )
 }
 
-export default ForgotPage
+export default NewPasswordPage
