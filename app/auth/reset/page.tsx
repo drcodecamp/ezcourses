@@ -1,17 +1,15 @@
-'use client'
-
 import Text from '@/shared/typography/text'
 import classes from '../layout.module.css'
 import React, { FC, PropsWithChildren } from 'react'
-import ForgotForm from '@/app/auth/_components/forgot-form'
+import ResetForm from '@/app/auth/_components/reset-form'
 
 const ForgotPage: FC<PropsWithChildren> = () => {
   return (
     <div className={classes.container}>
       <Text variant="h1" size="xxl">
-        Forgot password?
+        Reset password
       </Text>
-      <ForgotForm />
+      <ResetForm />
     </div>
   )
 }

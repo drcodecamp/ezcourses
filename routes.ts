@@ -16,7 +16,8 @@ export const authRoutes: string[] = [
   '/auth/login',
   '/auth/register',
   '/auth/error',
-  '/auth/forgot',
+  '/auth/reset',
+  '/auth/new-password',
 ]
 /**
  * prefix for API Auth routes
