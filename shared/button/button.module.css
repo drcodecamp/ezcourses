@@ -34,7 +34,7 @@
     outline: 2px solid var(--text-color-200);
 }
 .solid:disabled {
-    cursor: not-allowed !important;
+    cursor: not-allowed;
     background-color: var(--background-color-highlight);
 }
 .solid .content {

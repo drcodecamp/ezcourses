@@ -18,10 +18,10 @@ export default auth((req) => {
   if (isApiAuthRoute) {
     return null
   }
-  if (isApiAuthRoute && isLogged) {
-    return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl))
-  }
-  if (isAuthRoute && !isLogged) {
+  if (isAuthRoute) {
+    if (isLogged) {
+      return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl))
+    }
     return null
   }
   if (!isLogged && !isPublicRoute) {

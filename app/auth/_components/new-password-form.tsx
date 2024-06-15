@@ -61,11 +61,6 @@ const NewPasswordForm: FC<PropsWithChildren> = () => {
       newPassword(state, token).then((data) => {
         setFeedback(data)
       })
-      /*      return new Promise((r) => {
-        setTimeout(() => {
-          r(1 as any)
-        }, 2000)
-      })*/
     })
   }
 
