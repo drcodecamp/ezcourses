@@ -18,7 +18,7 @@ export const getUserByEmail = async (email: string) => {
  *
  * @param {string} id - The ID of the user to retrieve.
  */
-export const getUserByID = async (id: string) => {
+export const getUserById = async (id: string) => {
   try {
     return await db.user.findUnique({ where: { id } })
   } catch (err) {

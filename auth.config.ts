@@ -7,6 +7,9 @@ import Github from 'next-auth/providers/github'
 import Google from 'next-auth/providers/google'
 import type { NextAuthConfig } from 'next-auth'
 
+console.log(process.env.GOOGLE_CLIENT_ID)
+console.log(process.env.GOOGLE_CLIENT_SECRET)
+
 export default {
   providers: [
     Github({
@@ -20,7 +23,7 @@ export default {
     Credentials({
       async authorize(credentials) {
         const validatedFields = loginSchema.safeParse(credentials)
-        if (validatedFields.success) {
+        if (validatedFields?.success) {
           const { email, password } = validatedFields.data
           const user = await getUserByEmail(email)
           if (!user || !user.password) return null

@@ -2,7 +2,7 @@ import NextAuth from 'next-auth'
 import { PrismaAdapter } from '@auth/prisma-adapter'
 import { db } from '@/lib/db'
 import authConfig from '@/auth.config'
-import { getUserByID } from '@/data/user'
+import { getUserById } from '@/data/user'
 import { UserRole } from '@prisma/client'
 
 export const {
@@ -29,7 +29,7 @@ export const {
       // Allow OAuth without email verification
       if (account?.provider !== 'credentials') return true
 
-      const existingUser = await getUserByID(user.id)
+      const existingUser = await getUserById(user.id)
 
       // Prevent sign in without email verification
       if (!existingUser?.emailVerified) return false
@@ -48,7 +48,7 @@ export const {
     },
     async jwt({ token }) {
       if (!token.sub) return token
-      const existingUser = await getUserByID(token.sub)
+      const existingUser = await getUserById(token.sub)
       if (!existingUser) return token
       token.role = existingUser['role']
       return token
