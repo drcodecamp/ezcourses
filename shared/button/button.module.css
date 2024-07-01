@@ -12,7 +12,11 @@
     min-height: 24px;
 }
 
+.pending:disabled {
+    cursor: not-allowed;
+}
 .solid {
+    cursor: pointer;
     position: relative;
     border-radius: var(--border-radius);
     padding: 0 1em;
@@ -23,13 +27,16 @@
     min-height: 24px;
 }
 
+.solid:hover {
+    filter: brightness(0.9);
+}
 .solid:focus {
     outline: 2px solid var(--text-color-200);
 }
 .solid:disabled {
+    cursor: not-allowed;
     background-color: var(--background-color-highlight);
 }
-
 .solid .content {
     display: flex;
     align-items: center;
@@ -38,11 +45,6 @@
     position: relative;
     z-index: 2;
     font-weight: bold;
-}
-
-.solid:hover {
-    cursor: pointer;
-    filter: brightness(0.9);
 }
 
 .bordered {
@@ -65,7 +67,7 @@
     position: absolute;
     background: var(--primary-highlight);
     display: block;
-    content: "";
+    content: '';
     border-radius: 100%;
     opacity: 1;
     z-index: 1;

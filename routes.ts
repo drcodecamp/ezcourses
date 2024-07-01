@@ -2,7 +2,12 @@
  * Array of public Routes!
  * @type {string[]}
  */
-export const publicRoutes: string[] = ['/', '/course', '/watch']
+export const publicRoutes: string[] = [
+  '/',
+  '/auth/new-verification',
+  '/course',
+  '/watch',
+]
 /**
  * Array of routes related to auth!
  * @type {string[]}
@@ -11,7 +16,8 @@ export const authRoutes: string[] = [
   '/auth/login',
   '/auth/register',
   '/auth/error',
-  '/auth/forgot',
+  '/auth/reset',
+  '/auth/new-password',
 ]
 /**
  * prefix for API Auth routes

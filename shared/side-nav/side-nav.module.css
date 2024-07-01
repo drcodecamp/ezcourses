@@ -1,20 +1,20 @@
 .active {
-    color: var(--text-color);
-    background-color: var(--background-color-100);
+  color: var(--text-color);
+  background-color: var(--background-color-100);
 }
 
 .aside {
-    width: 250px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    padding-left: 0.5em;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 0.5em;
 }
 
 .aside h3 {
-    font-weight: bold;
-    font-size: 1.1em;
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
 .aside nav details {
@@ -33,29 +33,34 @@
 }
 
 .aside nav:not(:first-child) {
-    padding-top: 1em;
+  padding-top: 1em;
 }
 
 .nav > a {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    gap: 0.5em;
-    padding: 10px;
-    height: 35px;
-    line-height: 35px;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    color: var(--text-color-300);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 0.5em;
+  padding: 10px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  color: var(--text-color-300);
 }
 
 .nav > a:hover {
-    color: var(--text-color);
-    background-color: var(--background-color-100)
+  color: var(--text-color);
+  background-color: var(--background-color-100);
+}
+
+.nav svg {
+    height: 22px;
+    width: 22px;
 }
 
 @media (width < 750px) {
-    .aside {
-        display: none;
-    }
+  .aside {
+    display: none;
+  }
 }

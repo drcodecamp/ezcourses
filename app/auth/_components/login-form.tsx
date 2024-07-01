@@ -2,7 +2,7 @@
 
 import classes from '@/app/auth/layout.module.css'
 import { FcGoogle } from 'react-icons/fc'
-import { FaFacebook } from 'react-icons/fa'
+import { FaGithub } from 'react-icons/fa'
 import { FormFeedback } from '@/shared/form/feedback'
 import { Button } from '@/shared/button/button'
 import Link from 'next/link'
@@ -13,10 +13,8 @@ import { emailPattern } from '@/util/patterns/patterns'
 import { EmailInput } from '@/shared/input/email'
 import { PasswordInput } from '@/shared/input/password'
 import { signIn } from 'next-auth/react'
-import { DEFAULT_LOGIN_REDIRECT } from '@/routes'
 import { useSearchParams } from 'next/navigation'
-
-// todo export inputs into hook that return component and logic
+import Loader from '@/shared/loader/loader'
 
 export const initialFeedback = {
   type: '',
@@ -40,7 +38,9 @@ const LoginForm: FC<PropsWithChildren> = () => {
     searchParams.get('error') === 'OAuthAccountNotLinked'
       ? 'Email is used with another provider'
       : ''
+  const [isProviderLoading, startProviderLoading] = useTransition()
   const [isPending, startTransition] = useTransition()
+  const [provider, setProvider] = useState('')
   const [feedback, setFeedback] = useState({
     type: 'error',
     message: urlError,
@@ -85,6 +85,7 @@ const LoginForm: FC<PropsWithChildren> = () => {
       email: e.target.value,
     })
   }
+
   const handleLogin = () => {
     setFeedback(initialFeedback)
     if (!info.email) {
@@ -111,7 +112,6 @@ const LoginForm: FC<PropsWithChildren> = () => {
         message: 'Password should not contain spaces',
       })
     }
-
     startTransition(() => {
       login(info).then((data) => {
         setFeedback(data)
@@ -119,33 +119,49 @@ const LoginForm: FC<PropsWithChildren> = () => {
     })
   }
 
+  const handleProviderLogin = (provider: string) => {
+    if (isProviderLoading) return
+    setProvider(provider)
+    startProviderLoading(() => {
+      signIn(provider).then(() => {
+        setProvider('')
+      })
+    })
+  }
+
   return (
     <>
       <button
+        disabled={provider === 'github'}
         className={classes.method}
-        onClick={() => {
-          signIn('google', {
-            callbackUrl: DEFAULT_LOGIN_REDIRECT,
-          })
-        }}
+        onClick={() => handleProviderLogin('google')}
       >
-        <div className={classes.icon}>
-          <FcGoogle />
-        </div>
-        Continue with Google
+        {provider === 'google' ? (
+          <Loader />
+        ) : (
+          <>
+            <div className={classes.icon}>
+              <FcGoogle />
+            </div>
+            Continue with Google
+          </>
+        )}
       </button>
       <button
+        disabled={provider === 'google'}
         className={classes.method}
-        onClick={() => {
-          signIn('github', {
-            callbackUrl: DEFAULT_LOGIN_REDIRECT,
-          })
-        }}
+        onClick={() => handleProviderLogin('github')}
       >
-        <div className={classes.icon}>
-          <FaFacebook color="#4172e7" />
-        </div>
-        Continue with Facebook
+        {provider === 'github' ? (
+          <Loader />
+        ) : (
+          <>
+            <div className={classes.icon}>
+              <FaGithub />
+            </div>
+            Continue with Github
+          </>
+        )}
       </button>
       <hr />
       <form
@@ -190,7 +206,7 @@ const LoginForm: FC<PropsWithChildren> = () => {
         <hr />
         <p className={classes.center}>
           <span>
-            <Link href={appRoutes.forgot}>Forgot password?</Link>
+            <Link href={appRoutes.reset}>Forgot password?</Link>
           </span>
         </p>
         <p className={classes.center}>

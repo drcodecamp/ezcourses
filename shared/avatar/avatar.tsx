@@ -1,30 +1,27 @@
 'use client'
 
 import classes from './avatar.module.css'
-import React, {ReactNode} from 'react'
+import React from 'react'
 
 type Props = {
-    children: ReactNode
-    thumb?: string
-    session?: any
+  thumb?: string
+  name: string
 }
 
-export const Avatar: React.FC<Props> = ({thumb, session}) => {
-    return (
-        <div className={classes.avatar}>
-            {thumb ? (
-                <div className={classes.image}>
-                    <img
-                        src={session?.user.img ?? 'https://placehold.co/30x30'}
-                        alt="User Avatar"
-                    />
-                </div>
-            ) : (
-                <div className={classes.icon}>{''}</div>
-            )}
-            {JSON.stringify(session)}
-        </div>
-    )
+export const Avatar: React.FC<Props> = ({ thumb, name }) => {
+  return (
+    <div className={classes.icon}>
+      {thumb ? (
+        <img
+          className={classes.image}
+          src={thumb ?? 'https://placehold.co/30x30'}
+          alt="User Avatar"
+        />
+      ) : (
+        <div>{name?.charAt(0) || ' '}</div>
+      )}
+    </div>
+  )
 }
 
 export default Avatar
