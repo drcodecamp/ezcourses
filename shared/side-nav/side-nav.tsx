@@ -18,74 +18,77 @@ import classes from './side-nav.module.css'
 import Link from 'next/link'
 import { appRoutes } from '@/constants/routes'
 
-export default function SideNav() {
+const SideNav = () => {
   return (
     <>
       <aside className={classes.aside}>
         <nav className={classes.nav}>
           <Link href={appRoutes.home} className={classes.active}>
-            <AiOutlineFundProjectionScreen size={22} /> Home
+            <AiOutlineFundProjectionScreen /> Home
           </Link>
-          <Link href={appRoutes.home}>
-            <AiOutlineSetting size={22} /> Settings
+          <Link href={appRoutes.settings}>
+            <AiOutlineSetting /> Settings
           </Link>
         </nav>
         <nav className={classes.nav}>
           <h3>You</h3>
           <Link href={appRoutes.home}>
-            <AiOutlineFundProjectionScreen size={22} /> Your courses
+            <AiOutlineFundProjectionScreen /> Your courses
           </Link>
           <Link href={appRoutes.home}>
-            <AiOutlineHistory size={22} /> History
+            <AiOutlineHistory /> History
           </Link>
           <Link href={appRoutes.home}>
-            <AiOutlineLike size={22} /> Liked
+            <AiOutlineLike /> Liked
           </Link>
         </nav>
         <nav className={classes.nav}>
           <h3>Subscriptions</h3>
           <Link href={appRoutes.home}>
-            <Avatar>Doctor Code</Avatar>
+            <Avatar name="Doctor Code" />
+            <span>Doctor Code</span>
           </Link>
           <Link href={appRoutes.home}>
-            <Avatar>Doctor Code</Avatar>
+            <Avatar name="Doctor Code" />
+            <span>Doctor Code</span>
           </Link>
           <Link href={appRoutes.home}>
-            <Avatar>Doctor Code</Avatar>
+            <Avatar name="Doctor Code" />
+            <span>Doctor Code</span>
           </Link>
         </nav>
         <nav className={classes.nav}>
           <h3>Explore</h3>
           <Link href={appRoutes.home}>
-            <AiOutlineFire size={22} />
+            <AiOutlineFire />
             Trending
           </Link>
           <Link href={appRoutes.home}>
-            <LuAtom size={22} />
+            <LuAtom />
             A.I
           </Link>
           <Link href={appRoutes.home}>
-            <AiOutlineCode size={22} />
+            <AiOutlineCode />
             Development
           </Link>
           <Link href={appRoutes.home}>
-            <AiOutlineMoneyCollect size={22} />
+            <AiOutlineMoneyCollect />
             Business
           </Link>
           <Link href={appRoutes.home}>
-            <BiMusic size={22} />
+            <BiMusic />
             Music
           </Link>
           <Link href={appRoutes.home}>
-            <AiOutlineAreaChart size={22} />
+            <AiOutlineAreaChart />
             Trading
           </Link>
           <Link href={appRoutes.home}>
-            <BiPurchaseTagAlt size={22} />
+            <BiPurchaseTagAlt />
             Marketing
           </Link>
           <Link href={appRoutes.home}>
-            <FaBagShopping size={22} />
+            <FaBagShopping />
             Lifestyle
           </Link>
         </nav>
@@ -93,3 +96,5 @@ export default function SideNav() {
     </>
   )
 }
+
+export default SideNav

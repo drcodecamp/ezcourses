@@ -46,6 +46,11 @@
   background-color: var(--background-color-100);
 }
 
+.nav svg {
+    height: 22px;
+    width: 22px;
+}
+
 @media (width < 750px) {
   .aside {
     display: none;
