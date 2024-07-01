@@ -1,0 +1,173 @@
+.info {
+    padding-block: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.header {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h1 {
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.actions {
+    display: flex;
+    gap: 0.5em;
+}
+
+.channel {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.specifications {
+    color: #c6c6c6;
+}
+
+.name {
+}
+
+.subscribers {
+}
+
+.avatar {
+    height: 40px;
+    width: 40px;
+    background-color: gray;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.figure {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    width: 100%;
+    border-radius: 7px;
+    height: 100px;
+}
+
+.figure:hover {
+    background-color: #161616;
+}
+
+.time {
+    right: 5px;
+    bottom: 5px;
+    position: absolute;
+}
+
+.time p {
+    color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.16);
+}
+
+.thumb {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 168px;
+    height: 100%;
+}
+
+.thumb img {
+    border-radius: 7px;
+    width: 165px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90%;
+    flex: 2;
+}
+
+.author {
+    color: lightgray;
+}
+
+.followers {
+    color: gray;
+    font-size: 0.9em;
+}
+
+.name {
+    margin: 0 0 4px 0;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: 500;
+    overflow: hidden;
+    display: block;
+    max-height: 4rem;
+    -webkit-line-clamp: 2;
+    display: box;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    white-space: normal;
+    display: -moz-box;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: bold;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    white-space: normal;
+    margin: 0 0 4px 0;
+}
+
+.comments {
+    grid-area: comments;
+    overflow-y: auto;
+}
+
+.video {
+    grid-area: main-video;
+    display: flex;
+    flex-direction: column;
+}
+
+.player {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+}
+
+.player iframe {
+    border-radius: 7px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.explore {
+    grid-area: explore;
+    padding-inline: 10px;
+    min-width: 200px;
+    display: flex;
+    gap: 0.75em;
+    flex-direction: column;
+}
+
+.explore h2 {
+    font-weight: bold;
+}
