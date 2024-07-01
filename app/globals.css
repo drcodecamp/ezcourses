@@ -37,6 +37,7 @@ a {
 :root {
     --logo-color: #cd3720;
     --primary: rgb(229, 9, 20);
+    --secondary: #13C6FF;
     --primary-highlight: #ea4f30;
     --text-color: #dedede;
     --text-color-100: #dedede;

@@ -1,0 +1,18 @@
+.button {
+    min-width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: var(--border-radius);
+    background-color: var(--background-color-100);
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--background-color-200);
+}
+
+.button svg {
+    fill: var(--secondary)
+}
