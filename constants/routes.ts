@@ -2,6 +2,7 @@ export const appRoutes = {
   home: '/',
   affiliate: '/affiliate',
   blog: '/blog',
+  settings: '/settings',
   login: '/auth/login',
   reset: '/auth/reset',
   register: '/auth/register',
