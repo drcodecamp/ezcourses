@@ -31,66 +31,80 @@ const SideNav = () => {
           </Link>
         </nav>
         <nav className={classes.nav}>
-          <h3>You</h3>
-          <Link href={appRoutes.home}>
-            <AiOutlineFundProjectionScreen /> Your courses
-          </Link>
-          <Link href={appRoutes.home}>
-            <AiOutlineHistory /> History
-          </Link>
-          <Link href={appRoutes.home}>
-            <AiOutlineLike /> Liked
-          </Link>
+          <details open>
+            <summary>
+              <h3>You</h3>
+            </summary>
+            <Link href={appRoutes.home}>
+              <AiOutlineFundProjectionScreen /> Your courses
+            </Link>
+            <Link href={appRoutes.home}>
+              <AiOutlineHistory /> History
+            </Link>
+            <Link href={appRoutes.home}>
+              <AiOutlineLike /> Liked
+            </Link>
+          </details>
         </nav>
         <nav className={classes.nav}>
-          <h3>Subscriptions</h3>
-          <Link href={appRoutes.home}>
-            <Avatar name="Doctor Code" />
-            <span>Doctor Code</span>
-          </Link>
-          <Link href={appRoutes.home}>
-            <Avatar name="Doctor Code" />
-            <span>Doctor Code</span>
-          </Link>
-          <Link href={appRoutes.home}>
-            <Avatar name="Doctor Code" />
-            <span>Doctor Code</span>
-          </Link>
+          <details open>
+            <summary>
+              <h3>Subscriptions</h3>
+            </summary>
+            <Link href={appRoutes.home}>
+              <Avatar name="Doctor Code" />
+              <span>Doctor Code</span>
+            </Link>
+            <Link href={appRoutes.home}>
+              <Avatar name="Doctor Code" />
+              <span>Doctor Code</span>
+            </Link>
+            <Link href={appRoutes.home}>
+              <Avatar name="Doctor Code" />
+              <span>Doctor Code</span>
+            </Link>
+          </details>
         </nav>
         <nav className={classes.nav}>
-          <h3>Explore</h3>
-          <Link href={appRoutes.home}>
-            <AiOutlineFire />
-            Trending
-          </Link>
-          <Link href={appRoutes.home}>
-            <LuAtom />
-            A.I
-          </Link>
-          <Link href={appRoutes.home}>
-            <AiOutlineCode />
-            Development
-          </Link>
-          <Link href={appRoutes.home}>
-            <AiOutlineMoneyCollect />
-            Business
-          </Link>
-          <Link href={appRoutes.home}>
-            <BiMusic />
-            Music
-          </Link>
-          <Link href={appRoutes.home}>
-            <AiOutlineAreaChart />
-            Trading
-          </Link>
-          <Link href={appRoutes.home}>
-            <BiPurchaseTagAlt />
-            Marketing
-          </Link>
-          <Link href={appRoutes.home}>
-            <FaBagShopping />
-            Lifestyle
-          </Link>
+          <details open>
+            <summary>
+              {' '}
+              <h3>Explore</h3>
+            </summary>
+
+            <Link href={appRoutes.home}>
+              <AiOutlineFire />
+              Trending
+            </Link>
+            <Link href={appRoutes.home}>
+              <LuAtom />
+              A.I
+            </Link>
+            <Link href={appRoutes.home}>
+              <AiOutlineCode />
+              Development
+            </Link>
+            <Link href={appRoutes.home}>
+              <AiOutlineMoneyCollect />
+              Business
+            </Link>
+            <Link href={appRoutes.home}>
+              <BiMusic />
+              Music
+            </Link>
+            <Link href={appRoutes.home}>
+              <AiOutlineAreaChart />
+              Trading
+            </Link>
+            <Link href={appRoutes.home}>
+              <BiPurchaseTagAlt />
+              Marketing
+            </Link>
+            <Link href={appRoutes.home}>
+              <FaBagShopping />
+              Lifestyle
+            </Link>
+          </details>
         </nav>
       </aside>
     </>
